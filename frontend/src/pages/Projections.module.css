@@ -1,0 +1,258 @@
+.page { max-width: 1400px; }
+
+/* ── Selector bar ── */
+.selectorBar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  flex-wrap: wrap;
+}
+
+.selectorItem { display: flex; flex-direction: column; gap: 4px; }
+
+.selectorLabel {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-500);
+  font-weight: 600;
+}
+
+.select {
+  min-width: 260px;
+  padding: 6px 10px;
+  border: 1px solid var(--stone-400);
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--ink);
+  background: var(--stone-50);
+  outline: none;
+  cursor: pointer;
+}
+.select:focus { border-color: var(--bronze-500); }
+
+.scenarioMeta { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+
+.metaText {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--stone-500);
+}
+
+.headerActions { display: flex; gap: 8px; }
+
+.actionError {
+  background: oklch(0.52 0.14 28 / 0.08);
+  border-left: 2px solid var(--danger);
+  color: var(--danger);
+  font-size: 12px;
+  padding: 8px 14px;
+  margin-bottom: 16px;
+}
+
+.content { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+/* ── Runs table ── */
+.runsPanel { min-height: 160px; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.table th {
+  text-align: left;
+  padding: 9px 12px;
+  font-weight: 600;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--stone-500);
+  border-bottom: 2px solid var(--stone-400);
+}
+.table td { padding: 9px 12px; border-bottom: 1px solid var(--stone-300); }
+.table tbody tr { cursor: pointer; transition: background 0.1s; }
+.table tbody tr:hover { background: var(--stone-100); }
+
+.rowActive {
+  background: oklch(0.58 0.095 55 / 0.08) !important;
+  border-left: 2px solid var(--bronze-500);
+}
+
+.idCell { font-family: var(--font-mono); font-size: 11px; color: var(--ink); font-weight: 500; }
+.monoCell { font-family: var(--font-mono); font-size: 11px; color: var(--ink); }
+.dateCell { font-family: var(--font-mono); font-size: 10px; color: var(--stone-500); }
+
+/* ── Chart panel ── */
+.chartPanel { min-height: 400px; }
+
+/* ── KPI strip ── */
+.kpiStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-bottom: 20px;
+  border: 1px solid var(--stone-400);
+  background: var(--stone-400);
+}
+
+.kpiCard {
+  padding: 14px 16px;
+  background: var(--stone-50);
+}
+
+.kpiLabel {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--stone-500);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.kpiValues {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.kpiBaseline {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--stone-500);
+  text-decoration: line-through;
+}
+
+.kpiValue {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.kpiAxisRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: var(--stone-500);
+  margin-top: 2px;
+}
+
+/* ── Summary row ── */
+.summaryRow {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  border: 1px solid var(--stone-400);
+  margin-bottom: 20px;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 20px;
+  border-right: 1px solid var(--stone-400);
+}
+.summaryItem:last-child { border-right: none; }
+
+.summaryLabel {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--stone-500);
+  font-weight: 600;
+}
+
+.summaryValue {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.runError {
+  background: oklch(0.52 0.14 28 / 0.08);
+  border-left: 2px solid var(--danger);
+  color: var(--danger);
+  font-size: 12px;
+  padding: 8px 14px;
+  margin-bottom: 16px;
+}
+
+/* ── 4-panel chart grid ── */
+.chartGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--stone-400);
+  border: 1px solid var(--stone-400);
+}
+
+.chartCard {
+  padding: 16px;
+  background: var(--stone-50);
+}
+
+.chartCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.chartCardTitle {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.chartCardSub {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone-500);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.chartCardKpi {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chartCardKpi span:first-child {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.chartCardBase {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--stone-500);
+}
+
+.chartXAxis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: var(--stone-500);
+  margin-top: 4px;
+}
+
+.chartLegend {
+  display: flex;
+  gap: 12px;
+  font-size: 9px;
+  color: var(--stone-500);
+  margin-top: 6px;
+  font-family: var(--font-mono);
+}
+
+.legendDashed { color: var(--stone-500); }
+.legendBand { color: var(--stone-400); }

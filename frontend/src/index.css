@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─────────────────────────────────────────────────────────────
+   Namdaemun-ro palette — Bank of Korea building
+   Matches the wireframe exactly (stone · bronze · patina)
+───────────────────────────────────────────────────────────── */
+:root {
+  /* Stone scale (warm limestone grays) */
+  --stone-50:  oklch(0.96 0.008 75);   /* bright limestone */
+  --stone-100: oklch(0.92 0.012 75);   /* page background */
+  --stone-200: oklch(0.88 0.014 72);   /* card background */
+  --stone-300: oklch(0.84 0.015 70);   /* deeper stone / panels */
+  --stone-400: oklch(0.78 0.008 75);   /* granite line / borders */
+  --stone-500: oklch(0.66 0.012 68);   /* muted text / captions */
+
+  /* Bronze (primary brand — BOK seal, CTAs, active states) */
+  --bronze-300: oklch(0.72 0.08 58);
+  --bronze-500: oklch(0.58 0.095 55);  /* primary bronze */
+  --bronze-700: oklch(0.42 0.08 50);   /* deep bronze */
+  --bronze-900: oklch(0.28 0.055 48);  /* near-black bronze */
+
+  /* Patina (dome green — success, projections, stable states) */
+  --patina-300: oklch(0.78 0.045 175);
+  --patina-500: oklch(0.68 0.055 175);
+  --patina-700: oklch(0.50 0.05 178);
+
+  /* Ink */
+  --ink:       oklch(0.22 0.01 60);
+  --ink-soft:  oklch(0.38 0.012 62);
+
+  /* Danger */
+  --danger: oklch(0.52 0.14 28);
+
+  /* ── Semantic aliases (used throughout components) ── */
+  --bg-primary:    var(--stone-50);
+  --bg-secondary:  var(--stone-100);
+  --bg-sidebar:    var(--ink);
+  --border-color:  var(--stone-400);
+
+  --text-primary:   var(--ink);
+  --text-secondary: var(--stone-500);
+  --text-on-primary: var(--stone-50);
+
+  /* ── Action / status colors ── */
+  --bok-primary:       var(--bronze-500);
+  --bok-primary-dark:  var(--bronze-700);
+  --bok-primary-light: oklch(0.58 0.095 55 / 0.10);
+  --bok-accent:        var(--bronze-300);
+
+  --status-success: var(--patina-700);
+  --status-warning: var(--bronze-500);
+  --status-error:   var(--danger);
+  --status-info:    var(--patina-500);
+
+  /* ── Spacing ── */
+  --sidebar-width:  220px;
+  --header-height:  56px;
+  --page-padding:   24px;
+
+  /* ── Typography ── */
+  --font-family:  'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'EB Garamond', 'Noto Serif KR', Georgia, serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  /* Keep gray aliases so old references don't break */
+  --gray-50:  var(--stone-50);
+  --gray-100: var(--stone-100);
+  --gray-200: var(--stone-200);
+  --gray-300: var(--stone-300);
+  --gray-400: var(--stone-400);
+  --gray-500: var(--stone-500);
+  --gray-600: var(--ink-soft);
+  --gray-700: var(--ink-soft);
+  --gray-800: var(--ink);
+  --gray-900: var(--ink);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--ink);
+  background: var(--stone-100);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--stone-400); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--stone-500); }
+
+/* ── Card ── */
+.card {
+  background: var(--stone-50);
+  border: 1px solid var(--stone-400);
+  border-radius: 2px;
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  font-family: var(--font-family);
+}
+
+.btn-primary {
+  background: var(--bronze-500);
+  color: var(--stone-50);
+  border-color: var(--bronze-500);
+}
+
+.btn-primary:hover {
+  background: var(--bronze-700);
+  border-color: var(--bronze-700);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink-soft);
+  border-color: var(--stone-400);
+}
+
+.btn-secondary:hover {
+  background: var(--stone-100);
+  color: var(--ink);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: var(--stone-50);
+  border-color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: oklch(0.42 0.14 28);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-success {
+  background: oklch(0.68 0.055 175 / 0.18);
+  color: var(--patina-700);
+}
+
+.badge-warning {
+  background: oklch(0.58 0.095 55 / 0.12);
+  color: var(--bronze-700);
+}
+
+.badge-error {
+  background: oklch(0.52 0.14 28 / 0.12);
+  color: var(--danger);
+}
+
+.badge-info {
+  background: oklch(0.58 0.095 55 / 0.10);
+  color: var(--bronze-500);
+}
+
+/* ── Empty states ── */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--stone-500);
+}
+
+.empty-state-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  opacity: 0.35;
+}
+
+.empty-state-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+}

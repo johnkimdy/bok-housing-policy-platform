@@ -1,0 +1,140 @@
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--ink);
+  color: var(--stone-50);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-right: 1.5px solid var(--bronze-900);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 16px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logoIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--bronze-500);
+  display: grid;
+  place-items: center;
+  color: var(--bronze-500);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.logoTitle {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--bronze-500);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.logoSubtitle {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.nav {
+  flex: 1;
+  padding: 10px 8px;
+}
+
+.navSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.navSectionLabel {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.35);
+  padding: 10px 12px 4px;
+  font-weight: 600;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 2px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.60);
+  transition: all 0.12s ease;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.navItemActive {
+  background: oklch(0.58 0.095 55 / 0.12);
+  color: var(--stone-50) !important;
+  border-left-color: var(--bronze-500);
+}
+
+.navIcon {
+  font-size: 16px;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.navLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.navLabelKo {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.navLabelEn {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+}
+
+.footer {
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footerText {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.40);
+  line-height: 1.5;
+  font-family: var(--font-mono);
+}
+
+.footerVersion {
+  font-size: 9px;
+  opacity: 0.6;
+}

@@ -1,0 +1,15 @@
+.layout {
+  display: flex;
+  flex-direction: column;   /* TopNav on top, main below */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--stone-100);
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--page-padding);
+  background: var(--stone-100);
+}

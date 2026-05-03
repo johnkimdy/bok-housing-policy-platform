@@ -1,0 +1,103 @@
+.topnav {
+  display: flex;
+  align-items: stretch;
+  background: var(--ink);              /* dark black per wireframe */
+  border-bottom: 1.5px solid var(--bronze-900);
+  padding: 0 28px;
+  flex-shrink: 0;
+  height: 80px;
+  gap: 24px;
+}
+
+/* ── Identity (left) ── */
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 14px 0;
+}
+
+.logoCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--bronze-500);
+  display: grid;
+  place-items: center;
+  color: var(--bronze-500);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.identityText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.supertitle {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--bronze-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.15;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── Tabs (centre) ── */
+.tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-left: 8px;
+  flex: 1;
+}
+
+.tab {
+  display: flex;
+  align-items: flex-end;
+  padding: 0 18px 0;
+  padding-bottom: 1.5px;              /* sits just above border-bottom */
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.12s, border-color 0.12s;
+  white-space: nowrap;
+  line-height: 80px;
+}
+
+.tab:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.tabActive {
+  color: var(--bronze-500) !important;
+  border-bottom-color: var(--bronze-500);
+  font-weight: 600;
+}
+
+/* ── Meta (right) ── */
+.meta {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: var(--stone-500);
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+  white-space: nowrap;
+}

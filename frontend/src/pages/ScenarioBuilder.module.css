@@ -1,0 +1,323 @@
+.page {
+  max-width: 1400px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 20px;
+}
+
+.formPanel {
+  align-self: start;
+  position: sticky;
+  top: 0;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.tablePanel {
+  min-height: 400px;
+}
+
+/* ── Form heading ── */
+.formHeading {
+  margin-bottom: 20px;
+}
+
+.sectionCaption {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-500);
+  font-weight: 600;
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+/* ── Field components ── */
+.fieldStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fieldItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fieldLabel {
+  font-size: 10px;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+.fieldInput {
+  border: none;
+  border-bottom: 1.5px solid var(--stone-400);
+  padding: 6px 0;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--ink);
+  background: transparent;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.fieldInput:focus {
+  border-bottom-color: var(--bronze-500);
+}
+
+.fieldTextarea {
+  border: 1px solid var(--stone-400);
+  border-radius: 2px;
+  padding: 6px 8px;
+  font-size: 13px;
+  font-family: var(--font-family);
+  color: var(--ink);
+  background: transparent;
+  width: 100%;
+  outline: none;
+  resize: none;
+  transition: border-color 0.15s;
+}
+
+.fieldTextarea:focus {
+  border-color: var(--bronze-500);
+  box-shadow: 0 0 0 2px oklch(0.58 0.095 55 / 0.10);
+}
+
+.fieldSelect {
+  border: none;
+  border-bottom: 1.5px solid var(--stone-400);
+  padding: 6px 0;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--ink);
+  background: transparent;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.fieldRow2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.fieldRow3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.fieldInputUnit {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.fieldInputUnit .fieldInput {
+  flex: 1;
+}
+
+.unit {
+  font-size: 10px;
+  color: var(--stone-500);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Lever group ── */
+.leverGroup {
+  margin-top: 4px;
+}
+
+.leverGroupHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.leverGroupLabel {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-500);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.leverGroupLine {
+  flex: 1;
+  height: 1px;
+  background: var(--stone-400);
+}
+
+/* ── Checkboxes ── */
+.checkboxRow {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  accent-color: var(--bronze-500);
+  width: 13px;
+  height: 13px;
+}
+
+/* ── Buttons ── */
+.buttonRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.leverCountHint {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--stone-500);
+  font-family: var(--font-mono);
+}
+
+.errorMsg {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--danger);
+  padding: 8px 12px;
+  background: oklch(0.52 0.14 28 / 0.08);
+  border-left: 2px solid var(--danger);
+}
+
+/* ── Table ── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table th {
+  text-align: left;
+  padding: 9px 12px;
+  font-weight: 600;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--stone-500);
+  border-bottom: 2px solid var(--stone-400);
+  font-family: var(--font-family);
+}
+
+.table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--stone-300);
+}
+
+.table tbody tr {
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.table tbody tr:hover {
+  background: var(--stone-100);
+}
+
+.rowActive {
+  background: oklch(0.58 0.095 55 / 0.08) !important;
+  border-left: 2px solid var(--bronze-500);
+}
+
+.nameCell {
+  font-weight: 600;
+  color: var(--ink);
+  font-family: var(--font-family);
+}
+
+.monoCell {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink);
+}
+
+.dateCell {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--stone-500);
+}
+
+/* ── Status dot ── */
+.statusDot {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+}
+
+.dotCircle {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── Lever fingerprint ── */
+.fingerprint {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--stone-300);
+}
+
+.fingerprintGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.fingerprintLabel {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.fingerprintBar {
+  height: 20px;
+  overflow: hidden;
+  background: var(--stone-200);
+  border: 1px solid var(--stone-400);
+}
+
+.fingerprintFill {
+  height: 100%;
+  transition: opacity 0.2s;
+}
+
